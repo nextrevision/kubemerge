@@ -1,4 +1,4 @@
-# kubemerge
+# kubemerge [![Build Status](https://travis-ci.org/nextrevision/kubemerge.svg?branch=master)](https://travis-ci.org/nextrevision/kubemerge)
 
 Merge two Kubernetes resources together.
 
