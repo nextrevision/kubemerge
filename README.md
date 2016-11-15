@@ -77,7 +77,7 @@ Examples:
 
   kubemerge policy.yaml deployment.yaml
   kubemerge -yaml policy.yaml deployment.yaml
-	cat deployment.yaml | kubemerge policy.yaml
+  cat deployment.yaml | kubemerge policy.yaml
 
 Options:
   -yaml
