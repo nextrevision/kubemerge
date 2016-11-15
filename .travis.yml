@@ -11,16 +11,16 @@ script:
 - govendor vet +local
 - govendor test +local
 before_deploy:
-- GOOS=linux GOARCH=amd64 govendor build -o kenv_linux_amd64
-- GOOS=darwin GOARCH=amd64 govendor build -o kenv_darwin_amd64
+- GOOS=linux GOARCH=amd64 govendor build -o kubemerge_linux_amd64
+- GOOS=darwin GOARCH=amd64 govendor build -o kubemerge_darwin_amd64
 deploy:
   skip_cleanup: true
   provider: releases
   api_key:
-    secure: iaBN7XLYLyczNAC1gyby346iCOsNStj6l7Xu0dBrDdSIy82eYkEnxMe0AKJuWD6GyrP8ZWvbiEUnyPCyGLmKaQdEnKJtBb/5kp1AY8/SA9ZF5jEbwwYRPuUXBWM0jvi5Fc7SkHAUSKAXy9S5XTU3+Ag8iTSMDeL5Mm8BpBeA2/WVrHJDw4CcwoCxpODVOFFDKSePjiIWy0AE2zRpC4OONO9CYFKWtrhRpottON2u6QLVZhcvj5x3cRC2ukPN8rXJwCxUGrm1oyIRrZ/6LKBk1yRyA01YfkJqguyV1vLuyTg9/uhG/cfAzPlHPhW5B64+k4QgBgVSfY39eNIe5bGG59O9fQkYQNos1sFc46RrWBRkc8Xc+44uqAacEc+ebkjTL0HbGNnkYGerYLO94QOcnSbzqgB/tt8S5GD2+jeea1TMfxXEEv0aSjzVLmi0B12rd4RabEiOOh5QTzstU6Zglbs6XN07kgjMsU8/IT/bVlcRdEtBhvUl0eMRRHIxey0ipAypgxeL+8i0ab+wM3GincC/08d4W4XfXysHyFYKAs2nX8LBi3QTCVgmVEKE6VNjgAguRrT++9/moS33tU8KxvHnlAiEXSOS0DMGy82PgvlTngWUTenJiXzfbfZfB5XPAHygV8Dd/2q3rupPHzBwp+k/eMhzUrT813wvfqoWA94=
+    secure: Yb3BVKnyaKpsD/YbI8Me3t1kktnlttFwCJmt6cnCjfvg3Sp7lN0yKhw46AHGAjWxdhw+yRHPN80o+FY70v2wWP+Hez3kj+BX0UxDEh5Izr5m1WVEssmvnLJ2hSjLbcUfBMDyrvE3poSXYA6ITLqxQBAqIa+hZfFUNIyq91SraXMasMop4NmFyZNnH3UPioKPE5t5ZHaIFkOQOlsEt65UFwYKP9z5S1TYBUkiBvuYvJz+BVq7cEbxg4is3fK5Kj6Nahzj1XySBHhQiNMeAFeYvqoLemdhmpEGwb6TlJ3nuxW5flDGBifYuAfzqgSBGXCNSLO/TxEQr+SuqeGv5o4u+SvvhqaXmvKjEU1lWcruXnJ4Mm+lwWNkfjihuikvZE2KmRFO8G0mqDzojdNjATkd1OQYO9q6F8QrMPVu+q0OuOG4c3g/HMNIfo5clU/T3x8cFDeVuYfrfF1Pk1EnacWQKi7SDZiyBkEaPg2fX+hbt25TJQEnDKs2Dq4ZPskY6BQesH5aRsm7ABmRASSel7NPZGUHbP4owanPMKaP06ylfD7AG2zd684H7vVmwqSccibgxWFWDvrVUaAOyLr7pWY8hUtNTUsmey2vDvlxUAxHc1LlVMKHewgiAYB/E0z4vMS3aim+VLu/hxRC+pZehDohtYXYsAHDoEIyYsd99Ek514c=
   file:
-  - kenv_linux_amd64
-  - kenv_darwin_amd64
+  - kubemerge_linux_amd64
+  - kubemerge_darwin_amd64
   on:
     tags: true
-    repo: thisendout/kenv
+    repo: nextrevision/kubemerge
